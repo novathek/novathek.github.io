@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Novathek Software - Soluciones de Software a Medida</title>
+<meta content="Desarrollo de software personalizado, innovador y eficiente para impulsar tu negocio." name="description"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0091FF", // Bright Blue from logo
+                        secondary: "#FF8800", // Orange from logo
+                        "primary-dark": "#007ACC",
+                        "secondary-dark": "#CC6D00",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#111827",
+                        "surface-light": "#F3F4F6",
+                        "surface-dark": "#1F2937",
+                        "text-light": "#1F2937",
+                        "text-dark": "#F9FAFB",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230091FF' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+                    }
+                },
+            },
+        };
+    </script>
+<style>::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background-color: #4b5563;
+        }@keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .animate-float-delayed {
+            animation: float 8s ease-in-out infinite 1s;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans antialiased transition-colors duration-300">
+<nav class="fixed w-full z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex-shrink-0 flex items-center gap-3">
+<img alt="Novathek Logo Abstract Placeholder" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArzCbm0KBrfEkX6fcb1YTKMUp0h8sqffCH5OCFbRlVINO8R9QT9x0fsAb_39IM4bHRDg_ahLF4Gez0p34A_UOwsRC_pPBQ13cjQKpBU3W01pCvvORX3dnqImDQkVvUabPH3Mi6NgnCPJDfl5OuNZV4SNIxakWiJ-DffJchLqb3x7wPSg0fqRmXl-fUIc6XeSXmlBzih8CeCviBTNHWV584fCb0SYujZUZSAOgx6fnKwa2qlgI9PDCtFqdMQm9n0mqICU0m8BVVgnmL" style="display:none;"/> 
+<div class="relative flex items-center">
+<img alt="Novathek Software Logo" class="h-12 w-auto dark:brightness-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5tm94mZYytXRfQYN2d34gGbzBtTBGa3oIwcSy7BtRWJNkish6Rb0OZGmWlk1rSXDDFC4z5S4msOC32AyYFlVjVwLcCBq8y3AkAoc7k-SUmBklOI_0WBKd40f6kDeN2F2yyUykAN2S_OLGH0bwv5rgvrCDpD268AXsF3I-oPqALg6vl8TrbvoLPsrjU8NB93qYHdTOsZDS_rfetwT0ic52U1aN0fRa1WRfxE7VlPEcPlURwpVSqubZN7GZdcpMB2AfvEZo3KDB7HgH"/>
+</div>
+</div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition-colors" href="#inicio">Inicio</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition-colors" href="#servicios">Servicios</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition-colors" href="#nosotros">Nosotros</a>
+<a class="px-5 py-2.5 bg-primary hover:bg-primary-dark text-white rounded-full font-medium transition-all shadow-lg shadow-primary/30" href="#contacto">Contacto</a>
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition-colors" id="theme-toggle">
+<span class="material-icons-outlined dark:hidden">dark_mode</span>
+<span class="material-icons-outlined hidden dark:block">light_mode</span>
+</button>
+</div>
+<div class="md:hidden flex items-center">
+<button class="p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" id="mobile-menu-btn">
+<span class="material-icons-outlined text-2xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+<div class="hidden md:hidden bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800" id="mobile-menu">
+<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800" href="#inicio">Inicio</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800" href="#servicios">Servicios</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800" href="#nosotros">Nosotros</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-primary dark:text-primary font-bold" href="#contacto">Contacto</a>
+</div>
+</div>
+</nav>
+<section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden" id="inicio">
+<div class="absolute inset-0 bg-hero-pattern opacity-40 pointer-events-none"></div>
+<div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl dark:bg-primary/20 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl dark:bg-secondary/20 pointer-events-none"></div>
+<div class="absolute right-[10%] top-[20%] w-16 h-16 bg-gradient-to-br from-primary to-blue-400 rounded-tr-[50%] rounded-tl-[50%] rounded-bl-[50%] rounded-br-[5%] opacity-80 animate-float hidden lg:block shadow-lg"></div>
+<div class="absolute left-[5%] bottom-[20%] w-12 h-12 bg-gradient-to-br from-secondary to-orange-400 rounded-tr-[50%] rounded-tl-[5%] rounded-bl-[50%] rounded-br-[50%] opacity-80 animate-float-delayed hidden lg:block shadow-lg"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="text-center max-w-4xl mx-auto">
+<div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary font-semibold text-sm mb-6 border border-blue-100 dark:border-blue-800">
+<span class="flex h-2 w-2 rounded-full bg-primary mr-2"></span>
+                    Innovación en cada línea de código
+                </div>
+<h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8 text-gray-900 dark:text-white leading-tight">
+                    Transformamos ideas en <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Software Inteligente</span>
+</h1>
+<p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                    Desarrollamos soluciones tecnológicas a medida que impulsan el crecimiento de tu empresa. Desde aplicaciones web hasta sistemas empresariales complejos.
+                </p>
+<div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+<a class="px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-full font-bold text-lg shadow-xl shadow-blue-500/20 transition-all transform hover:-translate-y-1" href="#contacto">
+                        Iniciar Proyecto
+                    </a>
+<a class="px-8 py-4 bg-white dark:bg-surface-dark text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary rounded-full font-bold text-lg transition-all hover:shadow-lg" href="#servicios">
+                        Ver Servicios
+                    </a>
+</div>
+</div>
+<div class="mt-16 relative rounded-2xl p-2 bg-gradient-to-b from-gray-100 to-white dark:from-gray-800 dark:to-gray-900 shadow-2xl border border-gray-200 dark:border-gray-700">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 blur-xl opacity-30"></div>
+<div class="relative bg-white dark:bg-gray-900 rounded-xl overflow-hidden aspect-[16/9] flex items-center justify-center">
+<div class="text-center p-12">
+<span class="material-icons-outlined text-6xl text-gray-300 dark:text-gray-600 mb-4">dashboard</span>
+<p class="text-gray-400 dark:text-gray-500 font-medium">Panel de Control &amp; Analytics - Novathek UI</p>
+</div>
+<div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 bg-gray-50 dark:bg-gray-800/50 border-y border-gray-100 dark:border-gray-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<p class="text-center text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-8">Empresas que confían en nosotros</p>
+<div class="grid grid-cols-2 gap-8 md:grid-cols-5 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex justify-center text-xl font-bold text-gray-400 dark:text-gray-500">TechFlow</div>
+<div class="flex justify-center text-xl font-bold text-gray-400 dark:text-gray-500">DataSphere</div>
+<div class="flex justify-center text-xl font-bold text-gray-400 dark:text-gray-500">GlobalSoft</div>
+<div class="flex justify-center text-xl font-bold text-gray-400 dark:text-gray-500">NexGen</div>
+<div class="flex justify-center text-xl font-bold text-gray-400 dark:text-gray-500">InnovaCorp</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-background-dark relative" id="servicios">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-base text-secondary font-semibold tracking-wide uppercase">Nuestros Servicios</h2>
+<p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+                    Soluciones tecnológicas integrales
+                </p>
+<p class="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-400 mx-auto">
+                    Combinamos creatividad técnica con estrategia de negocios para entregar productos de software excepcionales.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group relative p-8 bg-surface-light dark:bg-surface-dark rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-primary/20">
+<div class="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all"></div>
+<div class="w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 shadow-md flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-icons-outlined text-3xl">code</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Desarrollo a Medida</h3>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Creamos software diseñado específicamente para resolver los desafíos únicos de tu negocio, garantizando escalabilidad y eficiencia.
+                    </p>
+</div>
+<div class="group relative p-8 bg-surface-light dark:bg-surface-dark rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-secondary/20">
+<div class="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all"></div>
+<div class="w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 shadow-md flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-icons-outlined text-3xl">smartphone</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Aplicaciones Móviles</h3>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Desarrollo nativo e híbrido para iOS y Android. Llevamos tu negocio al bolsillo de tus clientes con experiencias de usuario fluidas.
+                    </p>
+</div>
+<div class="group relative p-8 bg-surface-light dark:bg-surface-dark rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-primary/20">
+<div class="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all"></div>
+<div class="w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 shadow-md flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-icons-outlined text-3xl">cloud_queue</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Cloud Solutions</h3>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Migración, arquitectura y gestión en la nube. Optimizamos tu infraestructura para reducir costos y mejorar el rendimiento.
+                    </p>
+</div>
+<div class="group relative p-8 bg-surface-light dark:bg-surface-dark rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-secondary/20">
+<div class="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all"></div>
+<div class="w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 shadow-md flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-icons-outlined text-3xl">insights</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Consultoría IT</h3>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Asesoramiento estratégico para digitalizar procesos. Te guiamos en la selección e implementación de tecnologías adecuadas.
+                    </p>
+</div>
+<div class="group relative p-8 bg-surface-light dark:bg-surface-dark rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-primary/20">
+<div class="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all"></div>
+<div class="w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 shadow-md flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-icons-outlined text-3xl">security</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Ciberseguridad</h3>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Protegemos tus activos digitales con auditorías, pentesting y soluciones de seguridad robustas contra amenazas modernas.
+                    </p>
+</div>
+<div class="group relative p-8 bg-surface-light dark:bg-surface-dark rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-secondary/20">
+<div class="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all"></div>
+<div class="w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 shadow-md flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-icons-outlined text-3xl">auto_graph</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Data Analytics</h3>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Transformamos datos brutos en información valiosa para la toma de decisiones mediante Business Intelligence y Big Data.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden" id="nosotros">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+<div class="relative mb-12 lg:mb-0">
+<div class="relative rounded-2xl bg-white dark:bg-surface-dark p-2 shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+<img alt="Equipo de desarrollo Novathek trabajando colaborativamente" class="rounded-xl w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5xp8TzbmVoyxto7rjXfaXmDvP4Uj1uDgknUv97iO6QUqXzb_GE7lwvw7xp6mp98FDv623TCl8j_Y-N13-svgGsOn7_89BR4IC4DcbTuBV4BDCS0POnvltxGRBbJkYpS3IdTjt5E3R2qFhlURo38mTNu2VsdCcM3gbmvpYJOjvEOnbq7fixqH-d3Zw_h1pDBIjqSQNdrVCMof7_3NyTOJj1cjvgAEhM1YUsSxpX_-hR6lEXqKQnD9_NU_-4q0gVTFgkUSXXHkzvKpn"/>
+</div>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-4xl shadow-lg border-4 border-white dark:border-gray-800 animate-float-delayed">
+<span>10+</span>
+</div>
+<div class="absolute -bottom-16 -right-6 text-gray-800 dark:text-white font-semibold text-sm pt-12 pl-4">Años de experiencia</div>
+</div>
+<div>
+<h2 class="text-base text-primary font-semibold tracking-wide uppercase">Sobre Novathek</h2>
+<h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl mb-6">
+                        Pasión por la tecnología, compromiso con tu éxito
+                    </h3>
+<div class="prose prose-lg text-gray-500 dark:text-gray-400">
+<p>
+                            En Novathek Software, no somos solo programadores; somos socios estratégicos en tu transformación digital. Nacimos con la visión de cerrar la brecha entre la complejidad tecnológica y las necesidades reales de los negocios.
+                        </p>
+<p class="mt-4">
+                            Nuestra metodología se basa en la transparencia, la agilidad y la excelencia técnica. Cada línea de código que escribimos está pensada para ser robusta, escalable y mantenible a largo plazo.
+                        </p>
+</div>
+<div class="mt-10 grid grid-cols-2 gap-6">
+<div class="flex items-start">
+<div class="flex-shrink-0">
+<span class="material-icons-outlined text-secondary text-2xl">check_circle</span>
+</div>
+<div class="ml-3">
+<h4 class="text-lg font-medium text-gray-900 dark:text-white">Calidad Certificada</h4>
+<p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Estándares internacionales de desarrollo.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="flex-shrink-0">
+<span class="material-icons-outlined text-secondary text-2xl">groups</span>
+</div>
+<div class="ml-3">
+<h4 class="text-lg font-medium text-gray-900 dark:text-white">Equipo Experto</h4>
+<p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Talento senior en múltiples tecnologías.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="relative py-24 bg-white dark:bg-background-dark" id="contacto">
+<div class="absolute inset-0 overflow-hidden">
+<div class="absolute -top-[20%] -right-[10%] w-[50%] h-[100%] rounded-full bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900/10 dark:to-transparent opacity-50 blur-3xl pointer-events-none"></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="bg-primary rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+<div class="lg:w-1/2 p-10 lg:p-16 bg-gradient-to-br from-primary to-blue-600 text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-white opacity-10 rounded-full blur-xl"></div>
+<div class="absolute bottom-0 left-0 -ml-10 -mb-10 w-40 h-40 bg-secondary opacity-20 rounded-full blur-xl"></div>
+<h2 class="text-3xl font-extrabold mb-6">Hablemos de tu próximo proyecto</h2>
+<p class="text-blue-100 text-lg mb-8">
+                        ¿Tienes una idea en mente? Nuestro equipo está listo para escuchar tus necesidades y proponerte la mejor solución tecnológica.
+                    </p>
+<div class="space-y-6">
+<div class="flex items-center space-x-4">
+<span class="material-icons-outlined bg-white/20 p-2 rounded-lg">email</span>
+<span>contacto@novathek.com</span>
+</div>
+<div class="flex items-center space-x-4">
+<span class="material-icons-outlined bg-white/20 p-2 rounded-lg">phone</span>
+<span>+1 (555) 123-4567</span>
+</div>
+<div class="flex items-center space-x-4">
+<span class="material-icons-outlined bg-white/20 p-2 rounded-lg">place</span>
+<span>Av. Tecnológica 100, Ciudad Digital</span>
+</div>
+</div>
+<div class="mt-12 flex space-x-4">
+<a class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-primary transition-colors" href="#">
+<span class="font-bold text-sm">Li</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-primary transition-colors" href="#">
+<span class="font-bold text-sm">Tw</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-primary transition-colors" href="#">
+<span class="font-bold text-sm">Ig</span>
+</a>
+</div>
+</div>
+<div class="lg:w-1/2 p-10 lg:p-16 bg-white dark:bg-gray-800">
+<form action="#" class="space-y-6" method="POST">
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="name">Nombre Completo</label>
+<input class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-700 dark:text-white sm:text-sm py-3 px-4 bg-gray-50 dark:bg-gray-700/50" id="name" name="name" placeholder="Tu nombre" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="email">Correo Electrónico</label>
+<input class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-700 dark:text-white sm:text-sm py-3 px-4 bg-gray-50 dark:bg-gray-700/50" id="email" name="email" placeholder="tucorreo@empresa.com" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="message">Mensaje</label>
+<textarea class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-700 dark:text-white sm:text-sm py-3 px-4 bg-gray-50 dark:bg-gray-700/50" id="message" name="message" placeholder="Cuéntanos sobre tu proyecto..." rows="4"></textarea>
+</div>
+<div>
+<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-secondary hover:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary transition-colors transform hover:-translate-y-0.5" type="submit">
+                                Enviar Mensaje
+                            </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-1">
+<img alt="Novathek Logo Footer" class="h-10 w-auto mb-4 dark:brightness-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0Jh5KLstTY_OlL57TBq_bsHBnouCvKNjdESr6kWDYgvHwo18lJermnykUVm-B2i4Mf6IBqCsmzx0mzzBJ_cJCqSF8qchSvWcbeci-WlaFJFQSxC1c9pALJLYqWN_UkrkRmFLwSfeDZ57pomU9g0RyixO-uvAlBTfKXVOhROs7kcONHqacCR_MZljIvNzZPvldJFifjEbChbtmQP0HJtdjpnDSizZb09RB4OBPos04XXv3XyS6X_FStHdxoS2Cp5AEXjBx85-3ZvkP"/>
+<p class="text-sm text-gray-500 dark:text-gray-400">
+                        Desarrollando el futuro digital con soluciones de software innovadoras y personalizadas.
+                    </p>
+</div>
+<div>
+<h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase mb-4">Empresa</h3>
+<ul class="space-y-3">
+<li><a class="text-base text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Sobre Nosotros</a></li>
+<li><a class="text-base text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Carreras</a></li>
+<li><a class="text-base text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase mb-4">Servicios</h3>
+<ul class="space-y-3">
+<li><a class="text-base text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Desarrollo Web</a></li>
+<li><a class="text-base text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Aplicaciones Móviles</a></li>
+<li><a class="text-base text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Cloud Computing</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase mb-4">Legal</h3>
+<ul class="space-y-3">
+<li><a class="text-base text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Privacidad</a></li>
+<li><a class="text-base text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Términos</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-base text-gray-400 dark:text-gray-500 text-center md:text-left">
+                    © 2023 Novathek Software. Todos los derechos reservados.
+                </p>
+<div class="mt-4 md:mt-0 flex space-x-6">
+<span class="text-gray-400 dark:text-gray-500 text-sm">Designed with precision.</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Theme toggle logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        // Check for saved user preference, if any, on load of the website
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+        themeToggleBtn.addEventListener('click', function() {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+</body></html>
