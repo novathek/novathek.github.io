@@ -2,407 +2,610 @@
 <html lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Novathek Software - Soluciones de Software a Medida</title>
-<meta content="Desarrollo de software personalizado, innovador y eficiente para impulsar tu negocio." name="description"/>
+<title>Novathek Software - Innovación que impulsa tu negocio</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
 <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        primary: "#0091FF", // Bright Blue from logo
-                        secondary: "#FF8800", // Orange from logo
-                        "primary-dark": "#007ACC",
-                        "secondary-dark": "#CC6D00",
-                        "background-light": "#FFFFFF",
-                        "background-dark": "#111827",
-                        "surface-light": "#F3F4F6",
-                        "surface-dark": "#1F2937",
-                        "text-light": "#1F2937",
-                        "text-dark": "#F9FAFB",
+                        primary: "#0091ff", // Vibrant Blue from logo
+                        secondary: "#ff8c00", // Vibrant Orange from logo
+                        "background-light": "#ffffff",
+                        "background-dark": "#0f172a", // Slate 900
+                        "surface-light": "#f8fafc", // Slate 50
+                        "surface-dark": "#1e293b", // Slate 800
+                        whatsapp: "#25D366",
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Inter', 'sans-serif'],
+                        sans: ["Inter", "sans-serif"],
                     },
-                    backgroundImage: {
-                        'hero-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230091FF' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                    animation: {
+                        'spin-slow': 'spin 20s linear infinite',
+                        'scroll': 'scroll 40s linear infinite',
+                    },
+                    keyframes: {
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
                     }
                 },
             },
         };
     </script>
-<style>::-webkit-scrollbar {
+<style>
+        .blob-shape {
+            position: absolute;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.5;
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+        }::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: transparent;
+            background: #f1f1f1; 
         }
         ::-webkit-scrollbar-thumb {
-            background-color: #cbd5e1;
-            border-radius: 20px;
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #0f172a;
         }
         .dark ::-webkit-scrollbar-thumb {
-            background-color: #4b5563;
-        }@keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+            background: #334155;
         }
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }details > summary {
+            list-style: none;
         }
-        .animate-float-delayed {
-            animation: float 8s ease-in-out infinite 1s;
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: sweep .3s ease-in-out;
+        }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
         }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans antialiased transition-colors duration-300">
-<nav class="fixed w-full z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
+<nav class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-20">
-<div class="flex-shrink-0 flex items-center gap-3">
-<img alt="Novathek Logo Abstract Placeholder" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArzCbm0KBrfEkX6fcb1YTKMUp0h8sqffCH5OCFbRlVINO8R9QT9x0fsAb_39IM4bHRDg_ahLF4Gez0p34A_UOwsRC_pPBQ13cjQKpBU3W01pCvvORX3dnqImDQkVvUabPH3Mi6NgnCPJDfl5OuNZV4SNIxakWiJ-DffJchLqb3x7wPSg0fqRmXl-fUIc6XeSXmlBzih8CeCviBTNHWV584fCb0SYujZUZSAOgx6fnKwa2qlgI9PDCtFqdMQm9n0mqICU0m8BVVgnmL" style="display:none;"/> 
-<div class="relative flex items-center">
-<img alt="Novathek Software Logo" class="h-12 w-auto dark:brightness-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5tm94mZYytXRfQYN2d34gGbzBtTBGa3oIwcSy7BtRWJNkish6Rb0OZGmWlk1rSXDDFC4z5S4msOC32AyYFlVjVwLcCBq8y3AkAoc7k-SUmBklOI_0WBKd40f6kDeN2F2yyUykAN2S_OLGH0bwv5rgvrCDpD268AXsF3I-oPqALg6vl8TrbvoLPsrjU8NB93qYHdTOsZDS_rfetwT0ic52U1aN0fRa1WRfxE7VlPEcPlURwpVSqubZN7GZdcpMB2AfvEZo3KDB7HgH"/>
+<div class="flex justify-between items-center h-16">
+<div class="flex-shrink-0 flex items-center gap-2">
+<div class="relative w-8 h-8 flex items-center justify-center">
+<svg class="w-full h-full animate-spin-slow" viewBox="0 0 100 100">
+<path d="M50 10 A40 40 0 0 1 90 50" fill="none" stroke="#0091ff" stroke-linecap="round" stroke-width="12"></path>
+<path d="M90 50 A40 40 0 0 1 50 90" fill="none" stroke="#ff8c00" stroke-linecap="round" stroke-width="12"></path>
+<path d="M50 90 A40 40 0 0 1 10 50" fill="none" stroke="#0091ff" stroke-linecap="round" stroke-width="12"></path>
+<path d="M10 50 A40 40 0 0 1 50 10" fill="none" stroke="#ff8c00" stroke-linecap="round" stroke-width="12"></path>
+</svg>
 </div>
+<span class="font-bold text-xl tracking-tight text-slate-900 dark:text-white">Novathek</span>
 </div>
 <div class="hidden md:flex space-x-8 items-center">
-<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition-colors" href="#inicio">Inicio</a>
-<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition-colors" href="#servicios">Servicios</a>
-<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition-colors" href="#nosotros">Nosotros</a>
-<a class="px-5 py-2.5 bg-primary hover:bg-primary-dark text-white rounded-full font-medium transition-all shadow-lg shadow-primary/30" href="#contacto">Contacto</a>
-<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition-colors" id="theme-toggle">
-<span class="material-icons-outlined dark:hidden">dark_mode</span>
-<span class="material-icons-outlined hidden dark:block">light_mode</span>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#services">Servicios</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#about">Nosotros</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#clients">Clientes</a>
+<button aria-checked="false" aria-label="Toggle Dark Mode" class="relative inline-flex h-7 w-14 items-center rounded-full bg-slate-200 dark:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-slate-900" id="theme-toggle" role="switch">
+<span class="sr-only">Toggle Dark Mode</span>
+<span class="translate-x-1 dark:translate-x-8 inline-block h-5 w-5 transform rounded-full bg-white shadow transition duration-200 ease-in-out flex items-center justify-center">
+<span class="material-icons-round text-xs text-slate-400 dark:hidden">light_mode</span>
+<span class="material-icons-round text-xs text-slate-800 hidden dark:block">dark_mode</span>
+</span>
 </button>
 </div>
-<div class="md:hidden flex items-center">
-<button class="p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" id="mobile-menu-btn">
-<span class="material-icons-outlined text-2xl">menu</span>
+<div class="md:hidden flex items-center gap-4">
+<button aria-label="Toggle Dark Mode" class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none" id="theme-toggle-mobile">
+<span class="material-icons-round dark:hidden">dark_mode</span>
+<span class="material-icons-round hidden dark:block">light_mode</span>
+</button>
+<button class="text-slate-600 dark:text-slate-300 hover:text-primary focus:outline-none">
+<span class="material-icons-round text-3xl">menu</span>
 </button>
 </div>
-</div>
-</div>
-<div class="hidden md:hidden bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800" id="mobile-menu">
-<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800" href="#inicio">Inicio</a>
-<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800" href="#servicios">Servicios</a>
-<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800" href="#nosotros">Nosotros</a>
-<a class="block px-3 py-2 rounded-md text-base font-medium text-primary dark:text-primary font-bold" href="#contacto">Contacto</a>
 </div>
 </div>
 </nav>
-<section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden" id="inicio">
-<div class="absolute inset-0 bg-hero-pattern opacity-40 pointer-events-none"></div>
-<div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl dark:bg-primary/20 pointer-events-none"></div>
-<div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl dark:bg-secondary/20 pointer-events-none"></div>
-<div class="absolute right-[10%] top-[20%] w-16 h-16 bg-gradient-to-br from-primary to-blue-400 rounded-tr-[50%] rounded-tl-[50%] rounded-bl-[50%] rounded-br-[5%] opacity-80 animate-float hidden lg:block shadow-lg"></div>
-<div class="absolute left-[5%] bottom-[20%] w-12 h-12 bg-gradient-to-br from-secondary to-orange-400 rounded-tr-[50%] rounded-tl-[5%] rounded-bl-[50%] rounded-br-[50%] opacity-80 animate-float-delayed hidden lg:block shadow-lg"></div>
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-<div class="text-center max-w-4xl mx-auto">
-<div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary font-semibold text-sm mb-6 border border-blue-100 dark:border-blue-800">
-<span class="flex h-2 w-2 rounded-full bg-primary mr-2"></span>
-                    Innovación en cada línea de código
-                </div>
-<h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8 text-gray-900 dark:text-white leading-tight">
-                    Transformamos ideas en <br/>
-<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Software Inteligente</span>
+<section class="relative pt-24 pb-32 overflow-hidden flex items-center justify-center min-h-[85vh]">
+<div class="blob-shape bg-primary/20 w-96 h-96 rounded-full top-[-100px] left-[-100px] dark:bg-primary/10"></div>
+<div class="blob-shape bg-secondary/20 w-80 h-80 rounded-full bottom-[-50px] right-[-50px] dark:bg-secondary/10"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+<div class="inline-block mb-4 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-slate-800 border border-blue-100 dark:border-slate-700">
+<span class="text-sm font-semibold text-primary uppercase tracking-wider">Soluciones Digitales</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6">
+                Novathek <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Software</span>
 </h1>
-<p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                    Desarrollamos soluciones tecnológicas a medida que impulsan el crecimiento de tu empresa. Desde aplicaciones web hasta sistemas empresariales complejos.
-                </p>
+<p class="mt-4 text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                Innovación que impulsa tu negocio. Transformamos ideas complejas en soluciones digitales simples, elegantes y efectivas.
+            </p>
 <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-<a class="px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-full font-bold text-lg shadow-xl shadow-blue-500/20 transition-all transform hover:-translate-y-1" href="#contacto">
-                        Iniciar Proyecto
-                    </a>
-<a class="px-8 py-4 bg-white dark:bg-surface-dark text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary rounded-full font-bold text-lg transition-all hover:shadow-lg" href="#servicios">
-                        Ver Servicios
-                    </a>
+<a class="px-8 py-3 rounded-lg bg-secondary text-white font-medium text-lg hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20 w-full sm:w-auto text-center" href="#services">
+                    Ver Servicios
+                </a>
+<a class="px-8 py-3 rounded-lg bg-primary text-white font-medium text-lg hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/20 w-full sm:w-auto text-center" href="#contact">
+                    Contactanos
+                </a>
 </div>
 </div>
-<div class="mt-16 relative rounded-2xl p-2 bg-gradient-to-b from-gray-100 to-white dark:from-gray-800 dark:to-gray-900 shadow-2xl border border-gray-200 dark:border-gray-700">
-<div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 blur-xl opacity-30"></div>
-<div class="relative bg-white dark:bg-gray-900 rounded-xl overflow-hidden aspect-[16/9] flex items-center justify-center">
-<div class="text-center p-12">
-<span class="material-icons-outlined text-6xl text-gray-300 dark:text-gray-600 mb-4">dashboard</span>
-<p class="text-gray-400 dark:text-gray-500 font-medium">Panel de Control &amp; Analytics - Novathek UI</p>
-</div>
-<div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-</div>
-</div>
+<div class="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none opacity-10 dark:opacity-5">
+<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" fill="#0091ff" fill-opacity="1"></path>
+</svg>
 </div>
 </section>
-<section class="py-12 bg-gray-50 dark:bg-gray-800/50 border-y border-gray-100 dark:border-gray-800">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<p class="text-center text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-8">Empresas que confían en nosotros</p>
-<div class="grid grid-cols-2 gap-8 md:grid-cols-5 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-<div class="flex justify-center text-xl font-bold text-gray-400 dark:text-gray-500">TechFlow</div>
-<div class="flex justify-center text-xl font-bold text-gray-400 dark:text-gray-500">DataSphere</div>
-<div class="flex justify-center text-xl font-bold text-gray-400 dark:text-gray-500">GlobalSoft</div>
-<div class="flex justify-center text-xl font-bold text-gray-400 dark:text-gray-500">NexGen</div>
-<div class="flex justify-center text-xl font-bold text-gray-400 dark:text-gray-500">InnovaCorp</div>
+<section class="py-24 bg-surface-light dark:bg-surface-dark relative" id="about">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-8">¿Quiénes somos?</h2>
+<div class="relative bg-white dark:bg-background-dark p-10 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700">
+<div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg">
+<span class="material-icons-round text-white text-2xl">format_quote</span>
 </div>
-</div>
-</section>
-<section class="py-24 bg-white dark:bg-background-dark relative" id="servicios">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center max-w-3xl mx-auto mb-16">
-<h2 class="text-base text-secondary font-semibold tracking-wide uppercase">Nuestros Servicios</h2>
-<p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-                    Soluciones tecnológicas integrales
-                </p>
-<p class="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-400 mx-auto">
-                    Combinamos creatividad técnica con estrategia de negocios para entregar productos de software excepcionales.
+<p class="text-lg md:text-2xl font-medium leading-relaxed text-slate-700 dark:text-slate-300 mt-4">
+                    "Novathek es una empresa con origen en <span class="text-primary font-bold">San Fernando del Valle de Catamarca</span>. 
+                    Nuestra misión es simple: resolver problemas, enfocándonos en la <span class="text-secondary font-bold">calidad</span> de cada producto que desarrollamos."
                 </p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="group relative p-8 bg-surface-light dark:bg-surface-dark rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-primary/20">
-<div class="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all"></div>
-<div class="w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 shadow-md flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-icons-outlined text-3xl">code</span>
-</div>
-<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Desarrollo a Medida</h3>
-<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Creamos software diseñado específicamente para resolver los desafíos únicos de tu negocio, garantizando escalabilidad y eficiencia.
-                    </p>
-</div>
-<div class="group relative p-8 bg-surface-light dark:bg-surface-dark rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-secondary/20">
-<div class="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all"></div>
-<div class="w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 shadow-md flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
-<span class="material-icons-outlined text-3xl">smartphone</span>
-</div>
-<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Aplicaciones Móviles</h3>
-<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Desarrollo nativo e híbrido para iOS y Android. Llevamos tu negocio al bolsillo de tus clientes con experiencias de usuario fluidas.
-                    </p>
-</div>
-<div class="group relative p-8 bg-surface-light dark:bg-surface-dark rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-primary/20">
-<div class="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all"></div>
-<div class="w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 shadow-md flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-icons-outlined text-3xl">cloud_queue</span>
-</div>
-<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Cloud Solutions</h3>
-<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Migración, arquitectura y gestión en la nube. Optimizamos tu infraestructura para reducir costos y mejorar el rendimiento.
-                    </p>
-</div>
-<div class="group relative p-8 bg-surface-light dark:bg-surface-dark rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-secondary/20">
-<div class="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all"></div>
-<div class="w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 shadow-md flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
-<span class="material-icons-outlined text-3xl">insights</span>
-</div>
-<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Consultoría IT</h3>
-<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Asesoramiento estratégico para digitalizar procesos. Te guiamos en la selección e implementación de tecnologías adecuadas.
-                    </p>
-</div>
-<div class="group relative p-8 bg-surface-light dark:bg-surface-dark rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-primary/20">
-<div class="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all"></div>
-<div class="w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 shadow-md flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-icons-outlined text-3xl">security</span>
-</div>
-<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Ciberseguridad</h3>
-<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Protegemos tus activos digitales con auditorías, pentesting y soluciones de seguridad robustas contra amenazas modernas.
-                    </p>
-</div>
-<div class="group relative p-8 bg-surface-light dark:bg-surface-dark rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-secondary/20">
-<div class="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all"></div>
-<div class="w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 shadow-md flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
-<span class="material-icons-outlined text-3xl">auto_graph</span>
-</div>
-<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Data Analytics</h3>
-<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Transformamos datos brutos en información valiosa para la toma de decisiones mediante Business Intelligence y Big Data.
-                    </p>
-</div>
-</div>
 </div>
 </section>
-<section class="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden" id="nosotros">
+<section class="py-24 bg-background-light dark:bg-background-dark" id="services">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-<div class="relative mb-12 lg:mb-0">
-<div class="relative rounded-2xl bg-white dark:bg-surface-dark p-2 shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
-<img alt="Equipo de desarrollo Novathek trabajando colaborativamente" class="rounded-xl w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5xp8TzbmVoyxto7rjXfaXmDvP4Uj1uDgknUv97iO6QUqXzb_GE7lwvw7xp6mp98FDv623TCl8j_Y-N13-svgGsOn7_89BR4IC4DcbTuBV4BDCS0POnvltxGRBbJkYpS3IdTjt5E3R2qFhlURo38mTNu2VsdCcM3gbmvpYJOjvEOnbq7fixqH-d3Zw_h1pDBIjqSQNdrVCMof7_3NyTOJj1cjvgAEhM1YUsSxpX_-hR6lEXqKQnD9_NU_-4q0gVTFgkUSXXHkzvKpn"/>
-</div>
-<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-4xl shadow-lg border-4 border-white dark:border-gray-800 animate-float-delayed">
-<span>10+</span>
-</div>
-<div class="absolute -bottom-16 -right-6 text-gray-800 dark:text-white font-semibold text-sm pt-12 pl-4">Años de experiencia</div>
-</div>
-<div>
-<h2 class="text-base text-primary font-semibold tracking-wide uppercase">Sobre Novathek</h2>
-<h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl mb-6">
-                        Pasión por la tecnología, compromiso con tu éxito
-                    </h3>
-<div class="prose prose-lg text-gray-500 dark:text-gray-400">
-<p>
-                            En Novathek Software, no somos solo programadores; somos socios estratégicos en tu transformación digital. Nacimos con la visión de cerrar la brecha entre la complejidad tecnológica y las necesidades reales de los negocios.
-                        </p>
-<p class="mt-4">
-                            Nuestra metodología se basa en la transparencia, la agilidad y la excelencia técnica. Cada línea de código que escribimos está pensada para ser robusta, escalable y mantenible a largo plazo.
-                        </p>
-</div>
-<div class="mt-10 grid grid-cols-2 gap-6">
-<div class="flex items-start">
-<div class="flex-shrink-0">
-<span class="material-icons-outlined text-secondary text-2xl">check_circle</span>
-</div>
-<div class="ml-3">
-<h4 class="text-lg font-medium text-gray-900 dark:text-white">Calidad Certificada</h4>
-<p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Estándares internacionales de desarrollo.</p>
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Nuestros Servicios</h2>
+<p class="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                    Soluciones tecnológicas diseñadas a medida para escalar tu negocio al siguiente nivel.
+                </p>
+<div class="mt-8 flex justify-center items-center space-x-4">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300" id="label-ars">Pesos Argentinos (ARS)</span>
+<button aria-checked="false" class="relative inline-flex h-8 w-16 items-center rounded-full bg-slate-200 dark:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-slate-900" id="currency-toggle" role="switch">
+<span class="sr-only">Toggle currency</span>
+<span class="translate-x-1 inline-block h-6 w-6 transform rounded-full bg-white shadow transition duration-200 ease-in-out" id="toggle-knob"></span>
+</button>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 opacity-50" id="label-usd">Dólares (USD)</span>
 </div>
 </div>
-<div class="flex items-start">
-<div class="flex-shrink-0">
-<span class="material-icons-outlined text-secondary text-2xl">groups</span>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="group p-8 bg-surface-light dark:bg-surface-dark rounded-2xl border-2 border-primary dark:border-primary shadow-xl shadow-blue-500/10 lg:scale-105 transform hover:-translate-y-1 transition-all duration-300 flex flex-col relative z-10 overflow-visible">
+<div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase shadow-lg shadow-blue-500/30">
+                        Más Popular
+                    </div>
+<div class="w-14 h-14 rounded-2xl bg-blue-100 dark:bg-slate-700 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+<span class="material-icons-round text-primary text-3xl group-hover:text-white transition-colors">web</span>
 </div>
-<div class="ml-3">
-<h4 class="text-lg font-medium text-gray-900 dark:text-white">Equipo Experto</h4>
-<p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Talento senior en múltiples tecnologías.</p>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Páginas Web</h3>
+<div class="mb-4">
+<span class="text-3xl font-bold text-primary price-display" data-ars="$150.000" data-usd="$150 USD">$150.000</span>
 </div>
+<ul class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed space-y-2 mb-6 flex-grow">
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-primary text-base mt-0.5">check_circle</span>
+<span>Diseño moderno y adaptable</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-primary text-base mt-0.5">check_circle</span>
+<span>Secciones personalizadas</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-primary text-base mt-0.5">check_circle</span>
+<span>Formulario de contacto</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-primary text-base mt-0.5">check_circle</span>
+<span>Optimización SEO avanzada</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-primary text-base mt-0.5">check_circle</span>
+<span>Entrega en 48 horas</span>
+</li>
+</ul>
+<a class="w-full text-center py-2.5 rounded-lg bg-primary text-white font-medium hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/20" href="https://wa.me/5493834558268?text=Hola%20Novathek!%20Me%20interesa%20el%20servicio%20de%20P%C3%A1ginas%20Web." target="_blank">Consultar</a>
 </div>
+<div class="group p-8 bg-surface-light dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-1 transition-all duration-300 flex flex-col">
+<div class="w-14 h-14 rounded-2xl bg-orange-100 dark:bg-slate-700 flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
+<span class="material-icons-round text-secondary text-3xl group-hover:text-white transition-colors">dashboard</span>
 </div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Sistemas de Gestión</h3>
+<div class="mb-4">
+<span class="text-2xl font-bold text-secondary price-display" data-ars="$400.000" data-usd="$400 USD">$400.000</span>
+</div>
+<ul class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed space-y-2 mb-6 flex-grow">
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-secondary text-base mt-0.5">check_circle</span>
+<span>Gestión de inventario</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-secondary text-base mt-0.5">check_circle</span>
+<span>Panel de administración</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-secondary text-base mt-0.5">check_circle</span>
+<span>Reportes y analíticas</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-secondary text-base mt-0.5">check_circle</span>
+<span>Múltiples usuarios y roles</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-secondary text-base mt-0.5">check_circle</span>
+<span>Control de clientes</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-secondary text-base mt-0.5">check_circle</span>
+<span>Entrega en 7 días</span>
+</li>
+</ul>
+<a class="w-full text-center py-2.5 rounded-lg border border-secondary text-secondary font-medium hover:bg-secondary hover:text-white transition-colors" href="https://wa.me/5493834558268?text=Hola%20Novathek!%20Me%20interesa%20el%20servicio%20de%20Sistemas%20de%20Gesti%C3%B3n." target="_blank">Consultar</a>
+</div>
+<div class="group p-8 bg-surface-light dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all duration-300 flex flex-col">
+<div class="w-14 h-14 rounded-2xl bg-blue-100 dark:bg-slate-700 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+<span class="material-icons-round text-primary text-3xl group-hover:text-white transition-colors">smartphone</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Apps Mobile</h3>
+<div class="mb-4">
+<span class="text-2xl font-bold text-primary price-display" data-ars="$600.000" data-usd="$600 USD">$600.000</span>
+</div>
+<ul class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed space-y-2 mb-6 flex-grow">
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-primary text-base mt-0.5">check_circle</span>
+<span>Desarrollo iOS y Android</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-primary text-base mt-0.5">check_circle</span>
+<span>Diseño UI/UX personalizado</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-primary text-base mt-0.5">check_circle</span>
+<span>Notificaciones push</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-primary text-base mt-0.5">check_circle</span>
+<span>Integración con APIs</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-primary text-base mt-0.5">check_circle</span>
+<span>Publicación en tiendas</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-primary text-base mt-0.5">check_circle</span>
+<span>Entrega en 30 días</span>
+</li>
+</ul>
+<a class="w-full text-center py-2.5 rounded-lg border border-primary text-primary font-medium hover:bg-primary hover:text-white transition-colors" href="https://wa.me/5493834558268?text=Hola%20Novathek!%20Me%20interesa%20el%20servicio%20de%20Apps%20Mobile." target="_blank">Consultar</a>
+</div>
+<div class="group p-8 bg-surface-light dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-1 transition-all duration-300 flex flex-col relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3">
+<span class="bg-secondary/10 text-secondary text-xs font-bold px-2 py-1 rounded-full uppercase">Premium</span>
+</div>
+<div class="w-14 h-14 rounded-2xl bg-orange-100 dark:bg-slate-700 flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
+<span class="material-icons-round text-secondary text-3xl group-hover:text-white transition-colors">code</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Sistemas Personalizados</h3>
+<div class="mb-4">
+<span class="text-lg font-bold text-secondary">Nos adaptamos a tu necesidad</span>
+<span class="text-xs text-transparent block mt-1 select-none">.</span>
+</div>
+<ul class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed space-y-2 mb-6 flex-grow">
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-secondary text-base mt-0.5">check_circle</span>
+<span>E-commerce</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-secondary text-base mt-0.5">check_circle</span>
+<span>Turneros</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-secondary text-base mt-0.5">check_circle</span>
+<span>Plataformas educativas</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-secondary text-base mt-0.5">check_circle</span>
+<span>Generadores de documentos</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-secondary text-base mt-0.5">check_circle</span>
+<span>Cotizadores automáticos</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-icons-round text-secondary text-base mt-0.5">check_circle</span>
+<span>Portales de autogestión</span>
+</li>
+</ul>
+<a class="w-full text-center py-3 rounded-lg bg-secondary text-white font-bold hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20" href="https://wa.me/5493834558268?text=Hola%20Novathek!%20Me%20gustar%C3%ADa%20pedir%20un%20presupuesto%20para%20un%20sistema%20personalizado." target="_blank">Pedir presupuesto</a>
 </div>
 </div>
 </div>
 </section>
-<section class="relative py-24 bg-white dark:bg-background-dark" id="contacto">
-<div class="absolute inset-0 overflow-hidden">
-<div class="absolute -top-[20%] -right-[10%] w-[50%] h-[100%] rounded-full bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900/10 dark:to-transparent opacity-50 blur-3xl pointer-events-none"></div>
+<section class="py-20 bg-surface-light dark:bg-surface-dark overflow-hidden" id="clients">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
+<h2 class="text-3xl font-bold text-slate-900 dark:text-white">Nuestros Clientes</h2>
+<p class="mt-2 text-slate-500 dark:text-slate-400">Empresas que confían en nosotros</p>
 </div>
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-<div class="bg-primary rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
-<div class="lg:w-1/2 p-10 lg:p-16 bg-gradient-to-br from-primary to-blue-600 text-white relative overflow-hidden">
-<div class="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-white opacity-10 rounded-full blur-xl"></div>
-<div class="absolute bottom-0 left-0 -ml-10 -mb-10 w-40 h-40 bg-secondary opacity-20 rounded-full blur-xl"></div>
-<h2 class="text-3xl font-extrabold mb-6">Hablemos de tu próximo proyecto</h2>
-<p class="text-blue-100 text-lg mb-8">
-                        ¿Tienes una idea en mente? Nuestro equipo está listo para escuchar tus necesidades y proponerte la mejor solución tecnológica.
-                    </p>
+<div class="relative w-full overflow-hidden">
+<div class="flex space-x-12 animate-scroll w-max items-center justify-center opacity-70">
+<div class="h-16 w-48 flex items-center justify-center text-2xl font-bold text-slate-400 grayscale hover:grayscale-0 hover:text-blue-600 transition-all duration-300 cursor-pointer">TECHCORP</div>
+<div class="h-16 w-48 flex items-center justify-center text-2xl font-bold text-slate-400 grayscale hover:grayscale-0 hover:text-orange-500 transition-all duration-300 cursor-pointer">InnovaSoft</div>
+<div class="h-16 w-48 flex items-center justify-center text-2xl font-bold text-slate-400 grayscale hover:grayscale-0 hover:text-indigo-600 transition-all duration-300 cursor-pointer">GlobalSystem</div>
+<div class="h-16 w-48 flex items-center justify-center text-2xl font-bold text-slate-400 grayscale hover:grayscale-0 hover:text-emerald-600 transition-all duration-300 cursor-pointer">EcoLogic</div>
+<div class="h-16 w-48 flex items-center justify-center text-2xl font-bold text-slate-400 grayscale hover:grayscale-0 hover:text-purple-600 transition-all duration-300 cursor-pointer">NEXTLEVEL</div>
+<div class="h-16 w-48 flex items-center justify-center text-2xl font-bold text-slate-400 grayscale hover:grayscale-0 hover:text-red-500 transition-all duration-300 cursor-pointer">SwiftLog</div>
+<div class="h-16 w-48 flex items-center justify-center text-2xl font-bold text-slate-400 grayscale hover:grayscale-0 hover:text-blue-600 transition-all duration-300 cursor-pointer">TECHCORP</div>
+<div class="h-16 w-48 flex items-center justify-center text-2xl font-bold text-slate-400 grayscale hover:grayscale-0 hover:text-orange-500 transition-all duration-300 cursor-pointer">InnovaSoft</div>
+<div class="h-16 w-48 flex items-center justify-center text-2xl font-bold text-slate-400 grayscale hover:grayscale-0 hover:text-indigo-600 transition-all duration-300 cursor-pointer">GlobalSystem</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-background-light dark:bg-background-dark" id="faq">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-slate-900 dark:text-white">Preguntas Frecuentes</h2>
+<div class="w-16 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+</div>
+<div class="space-y-4">
+<details class="group p-6 bg-surface-light dark:bg-surface-dark rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm cursor-pointer transition-all duration-300 open:shadow-md">
+<summary class="flex items-center justify-between font-medium text-lg text-primary dark:text-primary hover:text-blue-600 transition-colors">
+<span>¿Cómo es la metodología de trabajo?</span>
+<span class="material-icons-round text-secondary transition-transform duration-300 group-open:rotate-45">add_circle</span>
+</summary>
+<div class="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-700 pt-4">
+                    Primero te enviamos el presupuesto. Una vez aprobado, se abona el 50% para iniciar el proyecto. El 50% restante se paga al momento de la entrega final del producto o servicio.
+                </div>
+</details>
+<details class="group p-6 bg-surface-light dark:bg-surface-dark rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm cursor-pointer transition-all duration-300 open:shadow-md">
+<summary class="flex items-center justify-between font-medium text-lg text-primary dark:text-primary hover:text-blue-600 transition-colors">
+<span>¿Por qué se solicita un 50% de adelanto?</span>
+<span class="material-icons-round text-secondary transition-transform duration-300 group-open:rotate-45">add_circle</span>
+</summary>
+<div class="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-700 pt-4">
+                    Porque los desarrollos web tienen costos iniciales obligatorios como hosting, dominio, certificados de seguridad, entre otros. Todo eso se contrata para poder arrancar el laburo.
+                </div>
+</details>
+<details class="group p-6 bg-surface-light dark:bg-surface-dark rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm cursor-pointer transition-all duration-300 open:shadow-md">
+<summary class="flex items-center justify-between font-medium text-lg text-primary dark:text-primary hover:text-blue-600 transition-colors">
+<span>¿Se entrega algún comprobante por el pago o adelanto?</span>
+<span class="material-icons-round text-secondary transition-transform duration-300 group-open:rotate-45">add_circle</span>
+</summary>
+<div class="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-700 pt-4">
+                    Sí, se entrega comprobante de pago por cada abono realizado, tanto del adelanto como del pago final.
+                </div>
+</details>
+<details class="group p-6 bg-surface-light dark:bg-surface-dark rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm cursor-pointer transition-all duration-300 open:shadow-md">
+<summary class="flex items-center justify-between font-medium text-lg text-primary dark:text-primary hover:text-blue-600 transition-colors">
+<span>¿Los adelantos son reembolsables?</span>
+<span class="material-icons-round text-secondary transition-transform duration-300 group-open:rotate-45">add_circle</span>
+</summary>
+<div class="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-700 pt-4">
+                    No. El adelanto se utiliza para cubrir gastos iniciales como hosting, dominio y servicios asociados. El 50% restante, en caso de no concretarse la entrega por motivos acordados, sí puede ser reembolsado.
+                </div>
+</details>
+<details class="group p-6 bg-surface-light dark:bg-surface-dark rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm cursor-pointer transition-all duration-300 open:shadow-md">
+<summary class="flex items-center justify-between font-medium text-lg text-primary dark:text-primary hover:text-blue-600 transition-colors">
+<span>¿Después de concretar el trabajo tengo algún mantenimiento mensual?</span>
+<span class="material-icons-round text-secondary transition-transform duration-300 group-open:rotate-45">add_circle</span>
+</summary>
+<div class="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-700 pt-4">
+                    Depende del producto o servicio contratado. Algunos desarrollos no requieren mantenimiento mensual. Lo que sí es obligatorio en todos los casos es la renovación anual del hosting y dominio, para que el proyecto siga online y funcionando correctamente.
+                </div>
+</details>
+</div>
+</div>
+</section>
+<section class="py-24 bg-background-light dark:bg-background-dark relative" id="contact">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-white dark:bg-surface-dark rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+<div class="md:w-5/12 bg-gradient-to-br from-primary to-blue-700 p-10 text-white flex flex-col justify-between relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="text-3xl font-bold mb-4">Hablemos</h2>
+<p class="text-blue-100 mb-8">
+                            ¿Tienes un proyecto en mente? Contáctanos y busquemos la mejor solución tecnológica para ti.
+                        </p>
 <div class="space-y-6">
-<div class="flex items-center space-x-4">
-<span class="material-icons-outlined bg-white/20 p-2 rounded-lg">email</span>
-<span>contacto@novathek.com</span>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+<span class="material-icons-round text-white">email</span>
 </div>
-<div class="flex items-center space-x-4">
-<span class="material-icons-outlined bg-white/20 p-2 rounded-lg">phone</span>
-<span>+1 (555) 123-4567</span>
+<span class="font-medium text-lg">consultas@novathek.com.ar</span>
 </div>
-<div class="flex items-center space-x-4">
-<span class="material-icons-outlined bg-white/20 p-2 rounded-lg">place</span>
-<span>Av. Tecnológica 100, Ciudad Digital</span>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+<span class="material-icons-round text-white">chat</span>
 </div>
+<span class="font-medium text-lg">3834 558268</span>
 </div>
-<div class="mt-12 flex space-x-4">
-<a class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-primary transition-colors" href="#">
-<span class="font-bold text-sm">Li</span>
-</a>
-<a class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-primary transition-colors" href="#">
-<span class="font-bold text-sm">Tw</span>
-</a>
-<a class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-primary transition-colors" href="#">
-<span class="font-bold text-sm">Ig</span>
-</a>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+<span class="material-icons-round text-white">location_on</span>
+</div>
+<span class="font-medium text-lg">San Fernando del Valle de Catamarca</span>
 </div>
 </div>
-<div class="lg:w-1/2 p-10 lg:p-16 bg-white dark:bg-gray-800">
-<form action="#" class="space-y-6" method="POST">
+</div>
+<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary rounded-full opacity-50 blur-3xl"></div>
+<div class="absolute -top-12 -right-12 w-40 h-40 bg-white rounded-full opacity-10 blur-xl"></div>
+</div>
+<div class="md:w-7/12 p-10 md:p-14 bg-white dark:bg-surface-dark">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div>
-<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="name">Nombre Completo</label>
-<input class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-700 dark:text-white sm:text-sm py-3 px-4 bg-gray-50 dark:bg-gray-700/50" id="name" name="name" placeholder="Tu nombre" type="text"/>
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="email">Correo Electrónico</label>
-<input class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-700 dark:text-white sm:text-sm py-3 px-4 bg-gray-50 dark:bg-gray-700/50" id="email" name="email" placeholder="tucorreo@empresa.com" type="email"/>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2" for="name">Nombre</label>
+<input class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" id="name" placeholder="Tu nombre" type="text"/>
 </div>
 <div>
-<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="message">Mensaje</label>
-<textarea class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-700 dark:text-white sm:text-sm py-3 px-4 bg-gray-50 dark:bg-gray-700/50" id="message" name="message" placeholder="Cuéntanos sobre tu proyecto..." rows="4"></textarea>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2" for="email">Email</label>
+<input class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" id="email" placeholder="tu@email.com" type="email"/>
+</div>
 </div>
 <div>
-<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-secondary hover:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary transition-colors transform hover:-translate-y-0.5" type="submit">
-                                Enviar Mensaje
-                            </button>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2" for="subject">Asunto</label>
+<select class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" id="subject">
+<option>Desarrollo Web</option>
+<option>App Mobile</option>
+<option>Sistema de Gestión</option>
+<option>Otro</option>
+</select>
 </div>
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2" for="message">Mensaje</label>
+<textarea class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" id="message" placeholder="Cuéntanos sobre tu proyecto..." rows="4"></textarea>
+</div>
+<button class="w-full py-4 px-6 rounded-lg bg-primary hover:bg-white text-white hover:text-primary font-bold text-lg border-2 border-transparent hover:border-primary transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/10" type="button">
+                            Enviar Mensaje
+                        </button>
 </form>
 </div>
 </div>
 </div>
 </section>
-<footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 pt-16 pb-8">
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-<div class="col-span-1 md:col-span-1">
-<img alt="Novathek Logo Footer" class="h-10 w-auto mb-4 dark:brightness-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0Jh5KLstTY_OlL57TBq_bsHBnouCvKNjdESr6kWDYgvHwo18lJermnykUVm-B2i4Mf6IBqCsmzx0mzzBJ_cJCqSF8qchSvWcbeci-WlaFJFQSxC1c9pALJLYqWN_UkrkRmFLwSfeDZ57pomU9g0RyixO-uvAlBTfKXVOhROs7kcONHqacCR_MZljIvNzZPvldJFifjEbChbtmQP0HJtdjpnDSizZb09RB4OBPos04XXv3XyS6X_FStHdxoS2Cp5AEXjBx85-3ZvkP"/>
-<p class="text-sm text-gray-500 dark:text-gray-400">
-                        Desarrollando el futuro digital con soluciones de software innovadoras y personalizadas.
-                    </p>
+<div class="flex flex-col items-center justify-center mb-8">
+<div class="flex items-center gap-2 mb-4">
+<div class="relative w-6 h-6 flex items-center justify-center">
+<svg class="w-full h-full" viewBox="0 0 100 100">
+<path d="M50 10 A40 40 0 0 1 90 50" fill="none" stroke="#0091ff" stroke-linecap="round" stroke-width="12"></path>
+<path d="M90 50 A40 40 0 0 1 50 90" fill="none" stroke="#ff8c00" stroke-linecap="round" stroke-width="12"></path>
+<path d="M50 90 A40 40 0 0 1 10 50" fill="none" stroke="#0091ff" stroke-linecap="round" stroke-width="12"></path>
+<path d="M10 50 A40 40 0 0 1 50 10" fill="none" stroke="#ff8c00" stroke-linecap="round" stroke-width="12"></path>
+</svg>
 </div>
-<div>
-<h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase mb-4">Empresa</h3>
-<ul class="space-y-3">
-<li><a class="text-base text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Sobre Nosotros</a></li>
-<li><a class="text-base text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Carreras</a></li>
-<li><a class="text-base text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Blog</a></li>
-</ul>
+<span class="font-bold text-xl text-slate-900 dark:text-white">Novathek</span>
 </div>
-<div>
-<h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase mb-4">Servicios</h3>
-<ul class="space-y-3">
-<li><a class="text-base text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Desarrollo Web</a></li>
-<li><a class="text-base text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Aplicaciones Móviles</a></li>
-<li><a class="text-base text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Cloud Computing</a></li>
-</ul>
-</div>
-<div>
-<h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase mb-4">Legal</h3>
-<ul class="space-y-3">
-<li><a class="text-base text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Privacidad</a></li>
-<li><a class="text-base text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Términos</a></li>
-</ul>
+<div class="flex space-x-6">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="sr-only">Facebook</span>
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-slate-400 hover:text-secondary transition-colors" href="#">
+<span class="sr-only">Instagram</span>
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.407-.06 4.123-.06h.08zm0 1.802c-2.628 0-2.946.012-3.982.06-.983.047-1.517.227-1.874.366-.47.183-.81.398-1.158.748-.35.348-.565.688-.748 1.158-.139.357-.319.891-.366 1.874-.047 1.036-.06 1.354-.06 3.982v.498c0 2.628.012 2.946.06 3.982.047.983.227 1.517.366 1.874.183.47.398.81.748 1.158.348.35.688.565 1.158.748.357.139.891.319 1.874.366 1.036.047 1.354.06 3.982.06h.498c2.628 0 2.946-.012 3.982-.06.983-.047 1.517-.227 1.874-.366.47-.183.81-.398 1.158-.748.35-.348.565-.688.748-1.158.139-.357.319-.891.366-1.874.047-1.036.06-1.354.06-3.982v-.498c0-2.628-.012-2.946-.06-3.982-.047-.983-.227-1.517-.366-1.874-.183-.47-.398-.81-.748-1.158-.348-.35-.688-.565-1.158-.748-.357-.139-.891-.319-1.874-.366-1.036-.047-1.354-.06-3.982-.06h-.498z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-slate-400 hover:text-green-500 transition-colors" href="#">
+<span class="sr-only">LinkedIn</span>
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
 </div>
 </div>
-<div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-<p class="text-base text-gray-400 dark:text-gray-500 text-center md:text-left">
-                    © 2023 Novathek Software. Todos los derechos reservados.
+<div class="border-t border-slate-200 dark:border-slate-800 pt-8 text-center">
+<p class="text-slate-500 dark:text-slate-400 text-sm">
+                    © 2026 Novathek. Todos los derechos reservados.
                 </p>
-<div class="mt-4 md:mt-0 flex space-x-6">
-<span class="text-gray-400 dark:text-gray-500 text-sm">Designed with precision.</span>
-</div>
 </div>
 </div>
 </footer>
+<div class="whatsapp-float group flex items-center">
+<div class="absolute right-full mr-3 bg-white dark:bg-slate-800 text-slate-800 dark:text-white px-3 py-1.5 rounded-lg shadow-lg border border-slate-100 dark:border-slate-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap text-sm font-medium">
+        ¡Charlemos!
+        <div class="absolute top-1/2 right-[-4px] -mt-1 w-2 h-2 bg-white dark:bg-slate-800 transform rotate-45 border-r border-t border-slate-100 dark:border-slate-700"></div>
+</div>
+<a class="bg-whatsapp text-white rounded-full p-4 md:p-5 shadow-xl hover:scale-110 transition-transform duration-300 flex items-center justify-center w-14 h-14 md:w-[72px] md:h-[72px]" href="https://wa.me/5493834558268?text=Hola%20Novathek!%20Quiero%20hacer%20una%20consulta%20general." target="_blank">
+<svg class="w-8 h-8 md:w-10 md:h-10 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+</a>
+</div>
 <script>
-        // Theme toggle logic
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-        // Check for saved user preference, if any, on load of the website
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            html.classList.add('dark');
-        } else {
-            html.classList.remove('dark');
+        // Check for Dark Mode Preference
+        const toggleBtn = document.getElementById('theme-toggle');
+        const toggleBtnMobile = document.getElementById('theme-toggle-mobile');
+        function updateThemeUI() {
+            const isDark = document.documentElement.classList.contains('dark');
+            if (toggleBtn) {
+                 const knob = toggleBtn.querySelector('span:nth-child(2)');
+                 const toggleChecked = toggleBtn.getAttribute('aria-checked') === 'true';
+                 // Toggle ARIA
+                 toggleBtn.setAttribute('aria-checked', isDark);
+                 // Move knob
+                 if (isDark) {
+                    knob.classList.remove('translate-x-1');
+                    knob.classList.add('translate-x-8');
+                 } else {
+                    knob.classList.add('translate-x-1');
+                    knob.classList.remove('translate-x-8');
+                 }
+            }
         }
-        themeToggleBtn.addEventListener('click', function() {
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
+        // Function to toggle theme
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
             } else {
-                html.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+            updateThemeUI();
+        }
+        // Add event listeners
+        if(toggleBtn) toggleBtn.addEventListener('click', toggleTheme);
+        if(toggleBtnMobile) toggleBtnMobile.addEventListener('click', toggleTheme);
+        // Initial Check
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        updateThemeUI();
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (!('theme' in localStorage)) {
+                if (event.matches) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+                updateThemeUI();
             }
         });
-        // Mobile menu toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+        // Currency Toggle Logic
+        const currencyToggle = document.getElementById('currency-toggle');
+        const toggleKnob = document.getElementById('toggle-knob');
+        const labelArs = document.getElementById('label-ars');
+        const labelUsd = document.getElementById('label-usd');
+        const priceDisplays = document.querySelectorAll('.price-display');
+        let isUsd = false;
+        if (currencyToggle) {
+            currencyToggle.addEventListener('click', () => {
+                isUsd = !isUsd;
+                // Toggle Button State
+                const ariaChecked = currencyToggle.getAttribute('aria-checked') === 'true';
+                currencyToggle.setAttribute('aria-checked', !ariaChecked);
+                if (isUsd) {
+                    toggleKnob.classList.remove('translate-x-1');
+                    toggleKnob.classList.add('translate-x-9');
+                    currencyToggle.classList.remove('bg-slate-200', 'dark:bg-slate-700');
+                    currencyToggle.classList.add('bg-primary');
+                    labelUsd.classList.remove('opacity-50');
+                    labelArs.classList.add('opacity-50');
+                } else {
+                    toggleKnob.classList.add('translate-x-1');
+                    toggleKnob.classList.remove('translate-x-9');
+                    currencyToggle.classList.add('bg-slate-200', 'dark:bg-slate-700');
+                    currencyToggle.classList.remove('bg-primary');
+                    labelArs.classList.remove('opacity-50');
+                    labelUsd.classList.add('opacity-50');
+                }
+                // Update Prices and Suffixes
+                priceDisplays.forEach(display => {
+                    display.textContent = isUsd ? display.dataset.usd : display.dataset.ars;
+                });
+            });
+        }
     </script>
-
 </body></html>
