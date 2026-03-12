@@ -1,5 +1,17 @@
+# ============================================================
+#  robots.txt — Novathek | Soluciones Digitales
+#  https://novathek.com.ar/
+# ============================================================
+
 User-agent: *
 Allow: /
+
+# Bloquear carpetas internas si las tenés
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /cgi-bin/
+Disallow: /*.php$
 
 # Sitemap
 Sitemap: https://novathek.com.ar/sitemap.xml
