@@ -2,9 +2,6 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
-<!-- ═══════════════════════════════════════
-     SEO PRIMARIO
-════════════════════════════════════════ -->
 <title>Novathek | Soluciones Digitales</title>
 <meta name="description" content="Novathek es una empresa de desarrollo de software de San Fernando del Valle de Catamarca. Creamos páginas web, apps mobile y sistemas de gestión a medida. Innovación que impulsa tu negocio."/>
 <meta name="keywords" content="desarrollo web Catamarca, páginas web Catamarca, software a medida, apps mobile, sistemas de gestión, Novathek, soluciones digitales, diseño web Argentina"/>
@@ -12,9 +9,6 @@
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://novathek.com.ar/"/>
 
-<!-- ═══════════════════════════════════════
-     OPEN GRAPH (Facebook / LinkedIn / WhatsApp)
-════════════════════════════════════════ -->
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://novathek.com.ar/"/>
 <meta property="og:title" content="Novathek | Soluciones Digitales"/>
@@ -26,9 +20,6 @@
 <meta property="og:locale" content="es_AR"/>
 <meta property="og:site_name" content="Novathek"/>
 
-<!-- ═══════════════════════════════════════
-     TWITTER CARD
-════════════════════════════════════════ -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:url" content="https://novathek.com.ar/"/>
 <meta name="twitter:title" content="Novathek | Soluciones Digitales"/>
@@ -36,9 +27,6 @@
 <meta name="twitter:image" content="https://novathek.com.ar/og-image.jpg"/>
 <meta name="twitter:image:alt" content="Novathek - Soluciones Digitales"/>
 
-<!-- ═══════════════════════════════════════
-     SCHEMA.ORG — LocalBusiness + WebSite
-════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -87,50 +75,6 @@
       "areaServed": {
         "@type": "Country",
         "name": "Argentina"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Servicios de Desarrollo de Software",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Páginas Web",
-              "description": "Diseño moderno y adaptable con SEO avanzado. Entrega en 48 horas."
-            },
-            "price": "150000",
-            "priceCurrency": "ARS"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Sistemas de Gestión",
-              "description": "Panel de administración, reportes y analíticas, control de clientes."
-            },
-            "price": "400000",
-            "priceCurrency": "ARS"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Apps Mobile",
-              "description": "Desarrollo iOS y Android con diseño UI/UX personalizado."
-            },
-            "price": "600000",
-            "priceCurrency": "ARS"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Sistemas Personalizados",
-              "description": "E-commerce, turneros, plataformas educativas y más a medida."
-            }
-          }
-        ]
       },
       "founder": {
         "@type": "Person",
@@ -188,16 +132,10 @@
 }
 </script>
 
-<!-- ═══════════════════════════════════════
-     FAVICONS
-════════════════════════════════════════ -->
 <link rel="icon" type="image/svg+xml" href="/novathek.svg"/>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 <meta name="theme-color" content="#0091ff"/>
 
-<!-- ═══════════════════════════════════════
-     PERFORMANCE HINTS
-════════════════════════════════════════ -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="dns-prefetch" href="https://cdn.tailwindcss.com"/>
@@ -225,7 +163,6 @@
   };
 </script>
 <style>
-  /* ── scrollbar ── */
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-track { background: #f1f1f1; }
   ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
@@ -234,7 +171,6 @@
   .dark ::-webkit-scrollbar-thumb { background: #334155; }
   .dark ::-webkit-scrollbar-thumb:hover { background: #475569; }
 
-  /* ── blob ── */
   .blob-shape {
     position: absolute;
     filter: blur(80px);
@@ -243,7 +179,6 @@
     pointer-events: none;
   }
 
-  /* ── hero gradient overlay: light vs dark ── */
   body:not(.dark) #hero-bg {
     background: radial-gradient(ellipse 80% 60% at 20% 40%, rgba(0,145,255,.18) 0%, transparent 70%),
                 radial-gradient(ellipse 60% 50% at 80% 70%, rgba(255,140,0,.15) 0%, transparent 70%),
@@ -255,11 +190,9 @@
                 #0f172a;
   }
 
-  /* ── nav backdrop ── */
   body:not(.dark) nav { background: rgba(255,255,255,.85); }
   body.dark nav       { background: rgba(15,23,42,.85); }
 
-  /* ── FAQ animation ── */
   details > summary { list-style: none; }
   details > summary::-webkit-details-marker { display: none; }
   details[open] summary ~ * {
@@ -270,7 +203,6 @@
     100% { opacity: 1; transform: translateY(0); }
   }
 
-  /* ── logo spin ── */
   @keyframes spin-slow {
     from { transform: rotate(0deg); }
     to   { transform: rotate(360deg); }
@@ -281,14 +213,10 @@
     display: block;
   }
 
-  /* ── smooth color transitions ── */
   body, nav, section, footer, div, span, p, h1, h2, h3, a, input, select, textarea {
     transition: background-color .3s, color .3s, border-color .3s;
   }
 
-  /* ══════════════════════════════════════
-     SCROLL REVEAL
-  ══════════════════════════════════════ */
   .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -303,16 +231,12 @@
   .reveal-scale { opacity: 0; transform: scale(0.88); transition: opacity 0.6s cubic-bezier(.22,1,.36,1), transform 0.6s cubic-bezier(.22,1,.36,1); }
   .reveal-scale.visible { opacity: 1; transform: scale(1); }
 
-  /* stagger delays */
   .delay-1 { transition-delay: .10s !important; }
   .delay-2 { transition-delay: .20s !important; }
   .delay-3 { transition-delay: .30s !important; }
   .delay-4 { transition-delay: .40s !important; }
   .delay-5 { transition-delay: .50s !important; }
 
-  /* ══════════════════════════════════════
-     HERO PARTICLES CANVAS
-  ══════════════════════════════════════ */
   #particles-canvas {
     position: absolute;
     inset: 0;
@@ -322,9 +246,6 @@
     z-index: 1;
   }
 
-  /* ══════════════════════════════════════
-     HERO TEXT ANIMATIONS
-  ══════════════════════════════════════ */
   .hero-badge  { animation: fadeSlideDown .7s cubic-bezier(.22,1,.36,1) .1s both; }
   .hero-title  { animation: fadeSlideUp   .8s cubic-bezier(.22,1,.36,1) .25s both; }
   .hero-sub    { animation: fadeSlideUp   .8s cubic-bezier(.22,1,.36,1) .4s  both; }
@@ -339,9 +260,6 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* ══════════════════════════════════════
-     TYPING CURSOR on hero title
-  ══════════════════════════════════════ */
   .type-cursor::after {
     content: '|';
     color: #0091ff;
@@ -350,9 +268,6 @@
   }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-  /* ══════════════════════════════════════
-     FLOATING ORBS (hero background)
-  ══════════════════════════════════════ */
   .orb {
     position: absolute;
     border-radius: 50%;
@@ -393,9 +308,6 @@
     50%     { transform: translate(-50%,-50%) scale(1.2); }
   }
 
-  /* ══════════════════════════════════════
-     NAV LINK UNDERLINE ANIMATION
-  ══════════════════════════════════════ */
   nav a {
     position: relative;
   }
@@ -410,9 +322,6 @@
   }
   nav a:hover::after { width: 100%; }
 
-  /* ══════════════════════════════════════
-     CARD SHIMMER on hover
-  ══════════════════════════════════════ */
   .card-shimmer {
     position: relative;
     overflow: hidden;
@@ -430,9 +339,6 @@
   }
   .card-shimmer:hover::before { left: 130%; }
 
-  /* ══════════════════════════════════════
-     BUTTON PULSE on hover
-  ══════════════════════════════════════ */
   .btn-pulse {
     position: relative;
     overflow: hidden;
@@ -449,14 +355,8 @@
   }
   .btn-pulse:hover::after { opacity: 1; transform: scale(1); }
 
-  /* ══════════════════════════════════════
-     COUNTER NUMBERS
-  ══════════════════════════════════════ */
   .stat-number { font-variant-numeric: tabular-nums; }
 
-  /* ══════════════════════════════════════
-     GRADIENT TEXT
-  ══════════════════════════════════════ */
   .gradient-text {
     background: linear-gradient(135deg, #0091ff, #ff8c00);
     -webkit-background-clip: text;
@@ -464,9 +364,6 @@
     background-clip: text;
   }
 
-  /* ══════════════════════════════════════
-     SECTION TITLE UNDERLINE DECOR
-  ══════════════════════════════════════ */
   .section-title {
     position: relative;
     display: inline-block;
@@ -482,9 +379,6 @@
   }
   .section-title.visible::after { width: 60%; }
 
-  /* ══════════════════════════════════════
-     FAQ HOVER GLOW
-  ══════════════════════════════════════ */
   details {
     transition: box-shadow .3s, transform .3s;
   }
@@ -493,9 +387,6 @@
     box-shadow: -4px 0 0 #0091ff, 0 4px 24px rgba(0,145,255,.08);
   }
 
-  /* ══════════════════════════════════════
-     FOUNDER AVATAR PULSE RING
-  ══════════════════════════════════════ */
   .avatar-ring {
     position: relative;
   }
@@ -517,9 +408,6 @@
     50%      { opacity: 0; transform: scale(1.08); }
   }
 
-  /* ══════════════════════════════════════
-     FOOTER INSTAGRAM BUTTON
-  ══════════════════════════════════════ */
   .ig-btn {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     opacity: 0;
@@ -532,9 +420,6 @@
   .ig-wrap:hover .ig-btn { opacity: 1; }
   .ig-wrap:hover svg { color: white !important; }
 
-  /* ══════════════════════════════════════
-     SCROLL PROGRESS BAR
-  ══════════════════════════════════════ */
   #scroll-progress {
     position: fixed;
     top: 0; left: 0;
@@ -545,9 +430,7 @@
     transition: width .1s linear;
     border-radius: 0 2px 2px 0;
   }
-  /* ══════════════════════════════════════
-     LOADING SCREEN
-  ══════════════════════════════════════ */
+
   #loader {
     position: fixed;
     inset: 0;
@@ -595,9 +478,6 @@
     color: rgba(255,255,255,.4);
   }
 
-  /* ══════════════════════════════════════
-     WHATSAPP FLOATING BUTTON
-  ══════════════════════════════════════ */
   #wa-float {
     position: fixed;
     bottom: 28px; right: 28px;
@@ -616,7 +496,6 @@
     box-shadow: 0 6px 28px rgba(37,211,102,.6);
   }
   #wa-float svg { width: 28px; height: 28px; fill: white; position: relative; z-index: 1; }
-  /* ripple */
   #wa-float .ripple {
     position: absolute;
     border-radius: 50%;
@@ -628,7 +507,6 @@
   @keyframes rippleAnim {
     to { transform: scale(4); opacity: 0; }
   }
-  /* pulse ring */
   #wa-float::before {
     content: '';
     position: absolute;
@@ -675,7 +553,6 @@
         <a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#services">Servicios</a>
         <a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#about">Nosotros</a>
         <a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#clients">Clientes</a>
-        <!-- Toggle desktop -->
         <button id="theme-toggle" aria-checked="false" role="switch" aria-label="Toggle Dark Mode"
           class="relative inline-flex h-7 w-14 items-center rounded-full bg-slate-200 dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-slate-900">
           <span class="sr-only">Toggle Dark Mode</span>
@@ -725,7 +602,6 @@
       </a>
     </div>
   </div>
-  <!-- wave decoration -->
   <div class="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none opacity-10 dark:opacity-5">
     <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" fill="#0091ff"/>
@@ -754,16 +630,6 @@
       <p class="reveal delay-2 mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
         Soluciones tecnológicas diseñadas a medida para escalar tu negocio al siguiente nivel.
       </p>
-      <!-- Currency toggle -->
-      <div class="mt-8 flex justify-center items-center space-x-4">
-        <span id="label-ars" class="text-sm font-medium text-slate-700 dark:text-slate-300">Pesos (ARS)</span>
-        <button id="currency-toggle" role="switch" aria-checked="false"
-          class="relative inline-flex h-8 w-16 items-center rounded-full bg-slate-200 dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-slate-900">
-          <span class="sr-only">Toggle currency</span>
-          <span id="toggle-knob" class="translate-x-1 inline-block h-6 w-6 transform rounded-full bg-white shadow transition-transform duration-200"></span>
-        </button>
-        <span id="label-usd" class="text-sm font-medium text-slate-400 dark:text-slate-500">Dólares (USD)</span>
-      </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -776,10 +642,7 @@
         <div class="w-14 h-14 rounded-2xl bg-blue-100 dark:bg-slate-700 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
           <span class="material-icons-round text-primary text-3xl group-hover:text-white transition-colors">web</span>
         </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Páginas Web</h3>
-        <div class="mb-4">
-          <span class="text-2xl font-bold text-primary price-display" data-ars="$150.000 ARS" data-usd="USD 150">$150.000 ARS</span>
-        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Páginas Web</h3>
         <ul class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-2 mb-6 flex-grow">
           <li class="flex items-start gap-2"><span class="material-icons-round text-primary text-base mt-0.5">check_circle</span><span>Diseño moderno y adaptable</span></li>
           <li class="flex items-start gap-2"><span class="material-icons-round text-primary text-base mt-0.5">check_circle</span><span>Secciones personalizadas</span></li>
@@ -796,10 +659,7 @@
         <div class="w-14 h-14 rounded-2xl bg-orange-100 dark:bg-slate-700 flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
           <span class="material-icons-round text-secondary text-3xl group-hover:text-white transition-colors">dashboard</span>
         </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Sistemas de Gestión</h3>
-        <div class="mb-4">
-          <span class="text-2xl font-bold text-secondary price-display" data-ars="$400.000 ARS" data-usd="USD 400">$400.000 ARS</span>
-        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Sistemas de Gestión</h3>
         <ul class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-2 mb-6 flex-grow">
           <li class="flex items-start gap-2"><span class="material-icons-round text-secondary text-base mt-0.5">check_circle</span><span>Gestión de inventario</span></li>
           <li class="flex items-start gap-2"><span class="material-icons-round text-secondary text-base mt-0.5">check_circle</span><span>Panel de administración</span></li>
@@ -817,10 +677,7 @@
         <div class="w-14 h-14 rounded-2xl bg-blue-100 dark:bg-slate-700 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
           <span class="material-icons-round text-primary text-3xl group-hover:text-white transition-colors">smartphone</span>
         </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Apps Mobile</h3>
-        <div class="mb-4">
-          <span class="text-2xl font-bold text-primary price-display" data-ars="$600.000 ARS" data-usd="USD 600">$600.000 ARS</span>
-        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Apps Mobile</h3>
         <ul class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-2 mb-6 flex-grow">
           <li class="flex items-start gap-2"><span class="material-icons-round text-primary text-base mt-0.5">check_circle</span><span>Desarrollo iOS y Android</span></li>
           <li class="flex items-start gap-2"><span class="material-icons-round text-primary text-base mt-0.5">check_circle</span><span>Diseño UI/UX personalizado</span></li>
@@ -841,10 +698,7 @@
         <div class="w-14 h-14 rounded-2xl bg-orange-100 dark:bg-slate-700 flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
           <span class="material-icons-round text-secondary text-3xl group-hover:text-white transition-colors">code</span>
         </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Sistemas Personalizados</h3>
-        <div class="mb-4">
-          <span class="text-lg font-bold text-secondary">Nos adaptamos a tu necesidad</span>
-        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Sistemas Personalizados</h3>
         <ul class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-2 mb-6 flex-grow">
           <li class="flex items-start gap-2"><span class="material-icons-round text-secondary text-base mt-0.5">check_circle</span><span>E-commerce</span></li>
           <li class="flex items-start gap-2"><span class="material-icons-round text-secondary text-base mt-0.5">check_circle</span><span>Turneros</span></li>
@@ -974,34 +828,23 @@
 <!-- FOUNDER -->
 <section class="py-24 bg-white dark:bg-slate-900" id="founder">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <!-- Header -->
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Conocé a Novathek</h2>
     </div>
-
-    <!-- Card -->
     <div class="reveal flex flex-col lg:flex-row gap-12 items-center bg-slate-50 dark:bg-slate-900 rounded-3xl p-10 lg:p-14 border border-slate-100 dark:border-slate-700 shadow-xl relative overflow-hidden">
-
-      <!-- Decorative blobs -->
       <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
       <div class="absolute -bottom-20 -left-20 w-60 h-60 rounded-full bg-secondary/10 blur-3xl pointer-events-none"></div>
-
-      <!-- Avatar -->
       <div class="relative flex-shrink-0 z-10">
         <div class="avatar-ring w-48 h-48 lg:w-56 lg:h-56 rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/30">
           <img src="esteban.jpg" alt="Esteban Guzzo" class="w-full h-full object-cover object-top" onerror="this.parentElement.classList.add('bg-gradient-to-br','from-primary','to-blue-700','flex','items-center','justify-center'); this.outerHTML='<span class=\'material-icons-round text-white\' style=\'font-size:6rem\'>person</span>'"/>
         </div>
       </div>
-
-      <!-- Text content -->
       <div class="relative z-10 flex-1 text-center lg:text-left">
         <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-1">Esteban Guzzo</h3>
         <p class="text-primary font-semibold text-lg mb-6 flex items-center gap-2 justify-center lg:justify-start">
           <span class="material-icons-round text-base">verified</span>
           CEO &amp; Founder
         </p>
-
         <div class="space-y-4 text-slate-600 dark:text-slate-300 text-base leading-relaxed">
           <p>
             Desarrollador Full Stack y emprendedor tecnológico con más de <strong class="text-slate-800 dark:text-white">tres años de experiencia</strong> en desarrollo de software. Ha participado en proyectos <strong class="text-slate-800 dark:text-white">web, mobile, AR y VR</strong>, trabajando con una amplia variedad de tecnologías y enfoques.
@@ -1084,7 +927,6 @@
 <section class="py-24 bg-slate-50 dark:bg-slate-900" id="contact">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="bg-white dark:bg-slate-900 rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-slate-100 dark:border-slate-700">
-      <!-- Left panel -->
       <div class="md:w-5/12 bg-gradient-to-br from-primary to-blue-700 p-10 text-white flex flex-col justify-between relative overflow-hidden">
         <div class="relative z-10">
           <h2 class="text-3xl font-bold mb-4">Hablemos</h2>
@@ -1113,7 +955,6 @@
         <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary rounded-full opacity-50 blur-3xl pointer-events-none"></div>
         <div class="absolute -top-12 -right-12 w-40 h-40 bg-white rounded-full opacity-10 blur-xl pointer-events-none"></div>
       </div>
-      <!-- Right form -->
       <div class="md:w-7/12 p-10 md:p-14 bg-white dark:bg-slate-900">
         <div class="space-y-6">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1152,7 +993,6 @@
 <footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col items-center justify-center mb-8">
-      <!-- Redes sociales -->
       <div class="flex items-center gap-4 mb-6">
         <a href="https://instagram.com/novathek_" target="_blank" aria-label="Instagram de Novathek"
           class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center group">
@@ -1209,38 +1049,9 @@
   if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
   if (themeBtnMobile) themeBtnMobile.addEventListener('click', toggleTheme);
 
-  // Load saved preference
   const saved = localStorage.getItem('theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   applyTheme(saved === 'dark' || (!saved && prefersDark));
-
-  // ── Currency Switcher ──
-  const currencyToggle = document.getElementById('currency-toggle');
-  const labelArs = document.getElementById('label-ars');
-  const labelUsd = document.getElementById('label-usd');
-  const priceDisplays = document.querySelectorAll('.price-display');
-  const toggleKnob = document.getElementById('toggle-knob');
-  let isUsd = false;
-
-  currencyToggle.addEventListener('click', () => {
-    isUsd = !isUsd;
-    currencyToggle.setAttribute('aria-checked', isUsd);
-    toggleKnob.style.transform = isUsd ? 'translateX(2rem)' : 'translateX(0.25rem)';
-
-    if (isUsd) {
-      labelUsd.classList.remove('text-slate-400', 'dark:text-slate-500');
-      labelUsd.classList.add('text-slate-700', 'dark:text-slate-300');
-      labelArs.classList.remove('text-slate-700', 'dark:text-slate-300');
-      labelArs.classList.add('text-slate-400', 'dark:text-slate-500');
-      priceDisplays.forEach(el => el.textContent = el.dataset.usd);
-    } else {
-      labelArs.classList.remove('text-slate-400', 'dark:text-slate-500');
-      labelArs.classList.add('text-slate-700', 'dark:text-slate-300');
-      labelUsd.classList.remove('text-slate-700', 'dark:text-slate-300');
-      labelUsd.classList.add('text-slate-400', 'dark:text-slate-500');
-      priceDisplays.forEach(el => el.textContent = el.dataset.ars);
-    }
-  });
 
   // ── SCROLL PROGRESS BAR ──
   const progressBar = document.getElementById('scroll-progress');
